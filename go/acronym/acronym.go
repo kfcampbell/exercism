@@ -10,7 +10,7 @@ import (
 // this is failing with
 // acronym_test.go:11: Acronym test [Something - I made up from thin air], expected [SIMUFTA], actual [SIMUFTA]
 // wtf?
-// maybe it's expecting the actual object, and i'm creating a new struct?
+// it's not expecting the original object, so creating a new string for first letters is fine
 
 // Abbreviate should have a comment documenting it.
 func Abbreviate(s string) string {
@@ -27,8 +27,6 @@ func Abbreviate(s string) string {
 	firstLetters := make([]rune, 0)
 
 	for i := 0; i < len(words); i++ {
-		words[i] = strings.TrimSpace(words[i])
-
 		firstLetters = append(firstLetters, firstLetter(words[i]))
 	}
 
