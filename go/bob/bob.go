@@ -10,6 +10,17 @@ import (
 const defaultRes = "Whatever."
 
 // Hey should have a comment documenting it.
+/*
+=== RUN   TestHey
+--- PASS: TestHey (0.00s)
+goos: darwin
+goarch: amd64
+pkg: bob
+BenchmarkHey
+BenchmarkHey-12    	 1716067	       711 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	bob	1.950s
+*/
 func Hey(remark string) string {
 	remark = strings.TrimSpace(remark)
 
